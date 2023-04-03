@@ -5,7 +5,7 @@
 {% block content %}
   <br>
   <div>
-    <h1>TODO list &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <h1>TODO list &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="{% url 'todo_list:task-create' %}" class="btn btn-primary link-to-page">
         add task
       </a>
@@ -34,7 +34,10 @@
               {% endif %}
             </form>
           </div>
-          <p>Created: {{ task.datetime }}</p>
+          <p>Created: {{ task.datetime }} &nbsp;&nbsp;&nbsp;&nbsp;
+            {% if task.deadline %}
+              Deadline: {{ task.deadline }}</p>
+            {% endif %}
           <p>Tags:
             {% for tag in task.tags.all %}
               {{ tag.name }}
